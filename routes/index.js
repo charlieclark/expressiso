@@ -7,11 +7,12 @@ require("node-jsx").install({
 });
 
 var React = require("react"),
+	ReactDomServer = require('react-dom/server'),
     App = React.createFactory(require("../public/javascripts/components/app"));
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  var markup = React.renderToString(App());      
+  var markup = ReactDomServer.renderToString(App());      
 
   res.render('index', { 
     title: 'Express',
